@@ -1,0 +1,23 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic Typescript Project Setup",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woof1001/ts-boiler.git"
+  },
+  "author": "~Woof~",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woof1001/ts-boiler/issues"
+  },
+  "homepage": "https://github.com/woof1001/ts-boiler#readme",
+  "devDependencies": {
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.7"
+  }
+}
