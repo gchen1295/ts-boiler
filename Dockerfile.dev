@@ -1,10 +1,12 @@
-FROM node:alpine
+FROM node:latest
 
-WORKDIR /app
+ENV APP_DIR=/usr/src/app
 
-COPY ./package*.json ./
+WORKDIR $APP_DIR
+
+COPY ./app/package*.json $APP_DIR/
 RUN npm install
 
-COPY ./app/src /app/src/
+COPY ./app/src $APP_DIR/src
 
 CMD ["npm", "run", "start-dev"]
