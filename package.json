@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/woof1001/ts-boiler#readme",
   "devDependencies": {
+    "@types/node": "^14.10.3",
     "ts-node-dev": "^1.0.0-pre.56",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"
