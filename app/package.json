@@ -3,11 +3,6 @@
   "version": "1.0.1",
   "description": "Basic Typescript Project Setup",
   "main": "dist/index.js",
-  "scripts": {
-    "start-dev": "ts-node-dev src/index.ts",
-    "start": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/woof1001/ts-boiler.git"
@@ -18,8 +13,32 @@
     "url": "https://github.com/woof1001/ts-boiler/issues"
   },
   "homepage": "https://github.com/woof1001/ts-boiler#readme",
+  "scripts": {
+    "start-dev": "ts-node-dev src/index.ts",
+    "start": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^14.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0",
     "ts-node-dev": "^1.0.0-pre.56",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"

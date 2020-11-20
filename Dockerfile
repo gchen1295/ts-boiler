@@ -1,11 +1,16 @@
-FROM node:alpine
+FROM node:latest
 
-WORKDIR /usr/src/app
+ENV APP_DIR=/usr/src/app
 
-COPY ./package*.json ./
-RUN npm install
+WORKDIR $APP_DIR
 
-COPY . .
-RUN npm run tsc
+COPY ./app/package*.json $APP_DIR/
+COPY ./app/yarn.lock $APP_DIR/
+RUN yarn install
 
-CMD ["npm", "start"]
+# COPY ./app/src $APP_DIR/src
+
+CMD ["yarn", "run", "start-dev"]
+
+# docker run -v /usr/src/app/node_modules -v %cd%/app:/usr/src/app -it {container_tag} /bin/bash (Windows)
+# Replace %cd% with current directory for each OS.
